@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:32768/univer
+    username: postgres
+    password:
+    driverClassName: org.postgresql.Driver
