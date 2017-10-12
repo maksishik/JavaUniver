@@ -1,11 +1,9 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.Group;
 import com.example.demo.model.Student;
 import com.example.demo.service.GroupService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
@@ -21,9 +19,8 @@ public class GroupController {
     }
 
     @PostMapping(value = "/add")
-    public void addStudentInGroup(@RequestParam(value = "id") Long id,
-                                   @RequestParam(value = "studentId") Long studentId) {
-        groupService.addStudentInGroup(id, studentId);
+    public Group addGroup(@RequestBody Group group) {
+        return groupService.addGroup(group);
     }
 
     @PostMapping(value = "/test")

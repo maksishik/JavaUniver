@@ -20,9 +20,7 @@ public class StudentService {
     }
 
     public void addStudent(String name, Long group_id) {
-        Student student = new Student();
-        student.setName(name);
-        student.setGroup(groupRepository.findOne(group_id));
+        Student student = new Student(name);
 
         this.studentRepository.save(student);
     }
@@ -36,6 +34,7 @@ public class StudentService {
     }
 
     public List<Student> studentsList() {
-        return studentRepository.findAll();
+        List<Student> studentList = studentRepository.findAll();
+        return studentList;
     }
 }

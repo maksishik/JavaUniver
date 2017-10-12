@@ -3,6 +3,8 @@ package com.example.demo.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.persistence.criteria.From;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -16,7 +18,13 @@ public class Group {
     @Column(name = "title")
     private String title;
 
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "student_id")
-    List<Student> student;
+    @OneToMany(fetch = FetchType.LAZY)
+    //@JoinColumn(name = "group_id")
+    private List<Student> student = new ArrayList<>();
+
+    public Group(String title) {
+        this.title = title;
+    }
+
+    public Group(){}
 }
