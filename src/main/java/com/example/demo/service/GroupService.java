@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.model.Group;
 import com.example.demo.repository.GroupRepository;
 import com.example.demo.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class GroupService {
         this.studentRepository = studentRepository;
     }
 
-    public void getStudentsByGroupId(Long id) {
-       // groupRepository.finAll
+    public void addStudentsInGroup(Long id) {
+        Group group = new Group();
     }
 }

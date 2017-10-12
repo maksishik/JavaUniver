@@ -10,10 +10,13 @@ import java.util.List;
 @Table(name = "groups")
 public class Group {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "title")
     private String title;
 
     @OneToMany(fetch = FetchType.LAZY)
-    List<Student> studentList;
+   // @JoinColumn(name = "student_id")
+    List<Student> student;
 }
