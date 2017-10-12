@@ -19,10 +19,9 @@ public class StudentService {
         this.groupRepository = groupRepository;
     }
 
-    public void addStudent(String name, Long group_id) {
-        Student student = new Student(name);
-
-        this.studentRepository.save(student);
+    public Student addStudent(Student student) {
+        student.setGroup(groupRepository.findOne(student.getGroupId()));
+        return studentRepository.save(student);
     }
 
     public void updateStudent(Student student) {

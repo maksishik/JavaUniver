@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.persistence.criteria.From;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -18,9 +19,9 @@ public class Group {
     @Column(name = "title")
     private String title;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = Student.class, mappedBy = "group", fetch = FetchType.LAZY)
     //@JoinColumn(name = "group_id")
-    private List<Student> student = new ArrayList<>();
+    private Set<Student> student;
 
     public Group(String title) {
         this.title = title;

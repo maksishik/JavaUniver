@@ -19,9 +19,8 @@ public class StudentController {
     }
 
     @PostMapping(value = "/add")
-    public void addStudent(@RequestParam(value = "name") String name,
-                             @RequestParam(value = "group_id") Long group_id) {
-        studentService.addStudent(name, group_id);
+    public Student addStudent(@RequestBody Student student) {
+        return studentService.addStudent(student);
     }
 
     @GetMapping(produces = "application/json")
