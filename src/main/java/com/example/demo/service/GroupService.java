@@ -1,10 +1,13 @@
 package com.example.demo.service;
 
 import com.example.demo.model.Group;
+import com.example.demo.model.Student;
 import com.example.demo.repository.GroupRepository;
 import com.example.demo.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class GroupService {
@@ -17,7 +20,11 @@ public class GroupService {
         this.studentRepository = studentRepository;
     }
 
-    public void addStudentsInGroup(Long id) {
-        Group group = new Group();
+    public void addStudentInGroup(Long id, Long studentName) {
+        Group group = groupRepository.findOne(id);
+    }
+
+    public void addGroup(String title) {
+
     }
 }

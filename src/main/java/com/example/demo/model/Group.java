@@ -16,7 +16,7 @@ public class Group {
     @Column(name = "title")
     private String title;
 
-    @OneToMany(fetch = FetchType.LAZY)
-   // @JoinColumn(name = "student_id")
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "student_id")
     List<Student> student;
 }

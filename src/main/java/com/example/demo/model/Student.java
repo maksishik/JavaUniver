@@ -16,7 +16,7 @@ public class Student {
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
-   // @JoinColumn(name = "group_id")
+    @JoinColumn(name = "group_id")
     private Group group;
 
 }
