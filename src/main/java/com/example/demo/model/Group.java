@@ -18,10 +18,10 @@ public class Group {
 
     @Column(name = "title")
     private String title;
-
-    @OneToMany(targetEntity = Student.class, mappedBy = "group", fetch = FetchType.LAZY)
-    //@JoinColumn(name = "group_id")
-    private Set<Student> student;
+/*
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "group_id")
+    private List<Student> student = new ArrayList<>();*/
 
     public Group(String title) {
         this.title = title;

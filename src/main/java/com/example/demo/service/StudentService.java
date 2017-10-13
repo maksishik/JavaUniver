@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.model.Group;
 import com.example.demo.model.Student;
 import com.example.demo.repository.GroupRepository;
 import com.example.demo.repository.StudentRepository;
@@ -33,7 +34,6 @@ public class StudentService {
     }
 
     public List<Student> studentsList() {
-        List<Student> studentList = studentRepository.findAll();
-        return studentList;
+        return studentRepository.findAll();
     }
 }

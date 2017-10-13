@@ -20,19 +20,11 @@ public class GroupService {
         this.studentRepository = studentRepository;
     }
 
-    public void addStudentInGroup(String title) {
-        /*aList<Student> studentList = studentRepository.findAll();
-        Group group = new Group();
-        group.setTitle(title);
-        group.setStudent(studentList);*/
+    public Group addGroup(Group group) {
+        return groupRepository.save(group);
     }
 
-    public Group addGroup(Group group) {
-        /*List<Student> students = studentRepository.findAll();
-        Group group = new Group("1gg");
-        group.setStudent(students);
-        Student student = new Student("PEtrov");
-        student.setGroup(group);*/
-        return groupRepository.save(group);
+    public List<Group> findAllGroups() {
+        return groupRepository.findAll();
     }
 }

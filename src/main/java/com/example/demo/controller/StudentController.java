@@ -23,7 +23,7 @@ public class StudentController {
         return studentService.addStudent(student);
     }
 
-    @GetMapping(produces = "application/json")
+    @GetMapping(value = "/list")
     public List<Student> findAllStudents(){
         return studentService.studentsList();
     }

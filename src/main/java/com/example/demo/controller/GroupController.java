@@ -23,14 +23,8 @@ public class GroupController {
         return groupService.addGroup(group);
     }
 
-    @PostMapping(value = "/test")
-    private List<Integer> test() {
-        List<Integer> integers = new ArrayList<>();
-        integers.add(1);
-        integers.add(1);
-        integers.add(1);
-        integers.add(1);
-
-        return integers;
+    @PostMapping(value = "/list")
+    public List<Group> findAllGroups() {
+        return groupService.findAllGroups();
     }
 }

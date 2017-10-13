@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import lombok.Data;
+import org.springframework.web.bind.annotation.Mapping;
 
 import javax.persistence.*;
 
@@ -20,10 +21,13 @@ public class Student {
     * пригодную для его сохранения (например в файл, в БД или для передачи по сети).
     * Сериализованные объекты можно затем восстановить (десериализовать).
     * */
-    private transient Long groupId;
+   // private transient Long groupId;
+
+
+    private Long groupId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "group_id")
+    @JoinColumn(name = "groupId", referencedColumnName = "id", insertable = false, updatable = false)
     private Group group;
 
     public Student(String name) {
