@@ -20,12 +20,15 @@ public class StudentService {
         this.groupRepository = groupRepository;
     }
 
-    public Student addStudent(Student student) {
-       // student.setGroup(groupRepository.findOne(student.getGroup().getId()));
+    public Student addStudent() {
+        Student student = new Student("LALLA", groupRepository.findOne(1L));
         return studentRepository.save(student);
     }
 
-    public void updateStudent(Student student) {
+    public void updateStudent(/*Student student*/Long id) {
+        Student student = studentRepository.findOne(id);
+        student.setName("Test");
+        student.setGroup(groupRepository.findOne(1L));
 
         studentRepository.save(student);
     }

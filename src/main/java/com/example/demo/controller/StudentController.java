@@ -19,8 +19,8 @@ public class StudentController {
     }
 
     @PostMapping(value = "/add")
-    public Student addStudent(@RequestBody Student student) {
-        return studentService.addStudent(student);
+    public Student addStudent(/*@RequestBody Student student*/) {
+        return studentService.addStudent();
     }
 
     @GetMapping(value = "/list")
@@ -30,5 +30,10 @@ public class StudentController {
     @GetMapping(value = "/{id}")
     public Student getStudent(@PathVariable("id") Long id){
         return studentService.getStudent(id);
+    }
+
+    @PutMapping(value = "/update/{id}")
+    public void updateStudent(@PathVariable("id") Long id/*@RequestBody Student student*/){
+        studentService.updateStudent(/*student*/id);
     }
 }
