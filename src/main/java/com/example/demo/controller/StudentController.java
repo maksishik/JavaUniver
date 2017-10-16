@@ -27,4 +27,8 @@ public class StudentController {
     public List<Student> findAllStudents(){
         return studentService.studentsList();
     }
+    @GetMapping(value = "/{id}")
+    public Student getStudent(@PathVariable("id") Long id){
+        return studentService.getStudent(id);
+    }
 }

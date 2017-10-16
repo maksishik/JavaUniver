@@ -1,12 +1,9 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Group;
-import com.example.demo.model.Student;
 import com.example.demo.service.GroupService;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -23,7 +20,7 @@ public class GroupController {
         return groupService.addGroup(group);
     }
 
-    @PostMapping(value = "/list")
+    @GetMapping(value = "/list")
     public List<Group> findAllGroups() {
         return groupService.findAllGroups();
     }

@@ -21,11 +21,12 @@ public class StudentService {
     }
 
     public Student addStudent(Student student) {
-        student.setGroup(groupRepository.findOne(student.getGroupId()));
+       // student.setGroup(groupRepository.findOne(student.getGroup().getId()));
         return studentRepository.save(student);
     }
 
     public void updateStudent(Student student) {
+
         studentRepository.save(student);
     }
 
@@ -35,5 +36,9 @@ public class StudentService {
 
     public List<Student> studentsList() {
         return studentRepository.findAll();
+    }
+
+    public Student getStudent(Long id) {
+        return studentRepository.findOne(id);
     }
 }
