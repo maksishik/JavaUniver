@@ -24,7 +24,22 @@ public class GroupService {
         return groupRepository.save(group);
     }
 
+    public void addStudentInGroup(Long id, Long studId) {
+        Student student = studentRepository.findOne(studId);
+        Group group = groupRepository.findOne(id);
+        student.setGroup(group);
+        studentRepository.save(student);
+    }
+
     public List<Group> findAllGroups() {
         return groupRepository.findAll();
+    }
+
+    public void updateGroup(Group group) {
+        groupRepository.save(group);
+    }
+
+    public void removeGroup(Long id) {
+        groupRepository.delete(id);
     }
 }

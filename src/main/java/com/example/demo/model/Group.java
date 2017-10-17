@@ -1,14 +1,9 @@
 package com.example.demo.model;
 
 import lombok.Data;
-import org.omg.CosNaming.BindingHelper;
 
 import javax.persistence.*;
-import javax.persistence.criteria.From;
-import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Data

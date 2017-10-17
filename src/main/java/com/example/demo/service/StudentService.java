@@ -20,23 +20,6 @@ public class StudentService {
         this.groupRepository = groupRepository;
     }
 
-    public Student addStudent() {
-        Student student = new Student("LALLA", groupRepository.findOne(1L));
-        return studentRepository.save(student);
-    }
-
-    public void updateStudent(/*Student student*/Long id) {
-        Student student = studentRepository.findOne(id);
-        student.setName("Test");
-        student.setGroup(groupRepository.findOne(1L));
-
-        studentRepository.save(student);
-    }
-
-    public void removeStudent(long id) {
-        studentRepository.delete(id);
-    }
-
     public List<Student> studentsList() {
         return studentRepository.findAll();
     }
@@ -44,4 +27,22 @@ public class StudentService {
     public Student getStudent(Long id) {
         return studentRepository.findOne(id);
     }
+
+    public Student addStudent(Student student) {
+        return studentRepository.save(student);
+    }
+
+    public void updateStudent(Student student) {
+        /*Student student = studentRepository.findOne(currentStudent.getId());
+        student.setName("Test");
+        student.setGroup(groupRepository.findOne(currentStudent.getGroup().getId()));*/
+
+        studentRepository.save(student);
+    }
+
+    public void removeStudent(Long id) {
+        studentRepository.delete(id);
+    }
+
+
 }

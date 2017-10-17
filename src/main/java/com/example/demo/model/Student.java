@@ -21,7 +21,7 @@ public class Student {
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "group_id")
-    @JsonProperty("group")
+    //@JsonProperty("group")
     private Group group;
 
     public Student(String name) {
@@ -34,12 +34,4 @@ public class Student {
     }
 
     public Student() {}
-
-    /*
-    * Сериализация - это преобразование экземпляра класса в форму,
-    * пригодную для его сохранения (например в файл, в БД или для передачи по сети).
-    * Сериализованные объекты можно затем восстановить (десериализовать).
-    * */
-    //private transient Long groupId;
-
 }

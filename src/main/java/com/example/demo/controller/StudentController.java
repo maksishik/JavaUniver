@@ -18,22 +18,28 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @PostMapping(value = "/add")
-    public Student addStudent(/*@RequestBody Student student*/) {
-        return studentService.addStudent();
-    }
-
     @GetMapping(value = "/list")
     public List<Student> findAllStudents(){
         return studentService.studentsList();
     }
+
     @GetMapping(value = "/{id}")
     public Student getStudent(@PathVariable("id") Long id){
         return studentService.getStudent(id);
     }
 
-    @PutMapping(value = "/update/{id}")
-    public void updateStudent(@PathVariable("id") Long id/*@RequestBody Student student*/){
-        studentService.updateStudent(/*student*/id);
+    @PostMapping(value = "/add")
+    public Student addStudent(@RequestBody Student student) {
+        return studentService.addStudent(student);
+    }
+
+    @PutMapping(value = "/update")
+    public void updateStudent(@RequestBody Student student){
+        studentService.updateStudent(student);
+    }
+
+    @DeleteMapping(value = "/remove/{id}")
+    public void removeStudent(@PathVariable("id") Long id) {
+        studentService.removeStudent(id);
     }
 }
